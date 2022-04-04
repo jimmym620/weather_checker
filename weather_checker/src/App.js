@@ -30,6 +30,7 @@ function App() {
     return (
         <div className="App">
             <div className="form">
+                <h1>Weather Checker</h1>
                 <input
                     type="text"
                     name="city"
@@ -42,10 +43,14 @@ function App() {
             {currentData ? (
                 <article>
                     <h1>{currentData.location.name}</h1>
+                    <h4>{currentData.location.country}</h4>
                     <p>{`Temp: ${currentData.current.temp_c}°C`}</p>
                     <p>{`Feels like: ${currentData.current.feelslike_c}°C`}</p>
-                    <p>{currentData.current.condition.text}</p>
+                    <p className="condition">
+                        {currentData.current.condition.text}
+                    </p>
                     <p>{`Humidity: ${currentData.current.humidity}%`}</p>
+                    <p>{`Wind speed: ${currentData.current.wind_mph}mph`}</p>
                 </article>
             ) : (
                 "Loading"
