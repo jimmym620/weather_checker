@@ -7,7 +7,7 @@ function App() {
     const [currentData, setCurrentData] = useState("");
     useEffect(() => {
         getCurrentData();
-    }, []);
+    });
 
     const getCurrentData = () => {
         axios
@@ -25,7 +25,6 @@ function App() {
     const handleCityInput = (event) => {
         setCity(event.target.value);
     };
-
 
     return (
         <div className="App">
