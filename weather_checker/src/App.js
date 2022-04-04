@@ -12,7 +12,7 @@ function App() {
     const getCurrentData = () => {
         axios
             .get(
-                `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${city}&aqi=no`
+                `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${city}&aqi=no`
             )
             .then((response) => {
                 setCurrentData(response.data);
